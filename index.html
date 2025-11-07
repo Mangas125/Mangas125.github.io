@@ -9,11 +9,12 @@
 <body>
     <h1>Mangirdas Rulis</h1>
     <h5>EEF-24</h5>
+
 <div id="pirmas-blokas">   
     <!-- 5b. Pastraipa -->
-<p>
-  Laisvalaikiu domiuosi technologijomis, sportuoju ir kuriu mažus žiniatinklio projektus.
-</p>
+<p><u>
+    Laisvalaikiu domiuosi technologijomis, sportuoju ir kuriu mažus žiniatinklio projektus.
+</u></p>
 
 <!-- 5c. Nuoroda -->
 <p>
@@ -25,22 +26,46 @@
  <p>Mano svajonių darbo iliustracija:</p>
   <img src="images/Justinas Mačiulaitis.jpg" alt="Svajonių darbo iliustracija" width="600">
 </div> 
+<!--<div> yra blokinis konteineris turiniui grupuoti.
+    Jis pats nereiškia jokios specialios prasmės, tik „dėžutę“, į kurią susidedi kitus elementus.-->
+
   <!-- 5e. Sąrašai -->
 <h2>Dominančios sritys:</h2>
 <ol>
-  <li>Energetikos inžinerija</li>
-  <li>Investavimas</li>
+  <strong><li>Energetikos inžinerija</li></strong>
+  <b><li>Investavimas</li></b>
   <li>Dirbtinis intelektas</li>
 </ol>
 
+<!--<strong> suteikia semantinį svarbos akcentą (naudinga prieinamumui ir SEO).
+
+<b> suteikia tik vizualų paryškinimą be semantikos.
+
+Rinkis <strong>, kai tekstas prasmiškai svarbus; <b> – kai reikia tik stiliaus. -->
+
 <h2>Ko norėčiau išmokti:</h2>
 <ul>
-  <li>Ivestuoti</li>
-  <li>Programuoti</li>
+  <em><li>Ivestuoti</li></em>
+  <i><li>Programuoti</li></i>
   <li>Planuoti laiką</li>
 </ul>
 
+<!--
+    <em> – SEMANTINIS akcentas (pabrėžia reikšmę/streso intonaciją).
+    Ekrano skaitytuvai akcentuoja, naudinga prieinamumui; pagal nutylėjimą rodomas kursyvu.
+  -->
+  <!--
+    <i> – TIK VIZUALUS kursyvas be semantikos.
+    Naudojamas stiliui: terminams, užsienio žodžiams, pavadinimams; skaitytuvai neakcentuoja.
+  -->
 
+  <!-- Visa pastraipa pabraukta su <u>. 
+     Tai gali klaidinti, nes:
+     1) Pabraukimas žiniatinklyje dažniausiai reiškia nuorodą, todėl naudotojai gali bandyti spausti tekstą.
+     2) Prieinamumas: ekrano skaitytuvai <u> nesuteikia semantikos; geriau naudoti CSS klasę su aiškia paskirtimi.
+     3) Skaitymo patogumas: ilgi pabraukti tekstai blogina įskaitomumą.
+     Rekomendacija: nenaudoti pabraukimo ne nuorodoms; jei būtina, naudoti CSS klasę (pvz., .paryskinta).
+-->
 
 </body>
 </html>
