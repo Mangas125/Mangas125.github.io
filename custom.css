@@ -1,0 +1,639 @@
+/* assets/css/custom.css */
+/* Mangirdas Rulis – LD9 individualus stiliai */
+
+/* 2. Tipografija – pakeista šriftų šeima */
+:root {
+  --default-font: "Mulish", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --heading-font: "Raleway", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --nav-font: "Mulish", system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Bazinė tipografija */
+body {
+  font-family: var(--default-font);
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+}
+
+/* Antraštės – aiškiai skiriasi pagal lygį */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+  text-transform: none;
+  margin-bottom: 0.6em;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 4vw, 3rem);
+  color: var(--contrast-color);
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: clamp(2rem, 3vw, 2.4rem);
+  color: var(--accent-color);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+h3 {
+  font-size: 1.6rem;
+  color: var(--heading-color);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+h4 {
+  font-size: 1.3rem;
+  color: var(--heading-color);
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.1rem;
+  color: color-mix(in srgb, var(--heading-color), transparent 15%);
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 0.95rem;
+  color: color-mix(in srgb, var(--heading-color), transparent 30%);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Pastraipos – kitoks stilius nei antraštės */
+p {
+  font-size: 0.98rem;
+  line-height: 1.8;
+  color: color-mix(in srgb, var(--default-color), transparent 10%);
+  margin-bottom: 1rem;
+}
+
+/* Sekcijų antraščių stilius */
+.section-title .subtitle {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: color-mix(in srgb, var(--accent-color), transparent 20%);
+}
+
+.section-title h2 {
+  position: relative;
+  padding-bottom: 0.6rem;
+}
+
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-color), color-mix(in srgb, var(--accent-color), transparent 50%));
+}
+
+/* 3. Mygtukai ir nuorodos – naujas stilius */
+
+/* Nuorodos */
+a {
+  color: color-mix(in srgb, var(--accent-color), #ffd54f 20%);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+a:hover,
+a:focus {
+  color: color-mix(in srgb, var(--accent-color), #ffffff 25%);
+  text-decoration: underline;
+}
+
+/* Bendras mygtukų stilius */
+.btn-primary,
+.btn-secondary,
+.btn-getstarted,
+.services .cta-box .cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: none;
+}
+
+/* Pagrindinis mygtukas */
+.btn-primary,
+.btn-getstarted,
+.services .cta-box .cta-btn {
+  background: linear-gradient(135deg, var(--accent-color), #ff9f43);
+  color: var(--contrast-color);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-getstarted:hover,
+.btn-getstarted:active,
+.services .cta-box .cta-btn:hover,
+.services .cta-box .cta-btn:active {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.65);
+}
+
+/* Antrinis mygtukas */
+.btn-secondary {
+  background: transparent;
+  color: var(--accent-color);
+  border: 2px solid color-mix(in srgb, var(--accent-color), transparent 10%);
+}
+
+.btn-secondary:hover,
+.btn-secondary:active {
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+  color: var(--contrast-color);
+}
+
+/* 4. Vienodi tarpai ir blokų išvaizda Apie, Reziumė, Portfolio */
+
+section.about,
+section.resume,
+section.portfolio {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.about .profile-card,
+.about .content-wrapper,
+.resume .experience-section .exp-card,
+.resume .education-section .timeline-track .timeline-item .timeline-content,
+.portfolio .portfolio-card,
+.services .service-item {
+  border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+  background: color-mix(in srgb, var(--surface-color), #000000 10%);
+  padding: 1.8rem;
+}
+
+.about .row.gy-5 > [class*="col-"],
+.resume .row.gy-5 > [class*="col-"],
+.portfolio .portfolio-item {
+  margin-bottom: 1.75rem;
+}
+
+/* 5. 2 papildomi komponentai – navigacija ir „scroll-top“ */
+
+/* Navigacijos juosta */
+.header {
+  background: rgba(5, 5, 5, 0.9);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.header .logo .sitename {
+  font-weight: 800;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  color: var(--accent-color);
+}
+
+.navmenu > ul > li > a {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.78rem;
+}
+
+/* „Į viršų“ mygtukas */
+.scroll-top {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 0%, #ffe082, var(--accent-color));
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75);
+}
+
+.scroll-top i {
+  font-size: 22px;
+}
+
+.scroll-top:hover,
+.scroll-top:active {
+  transform: translateY(-3px) scale(1.03);
+}
+
+/* Papildoma 1: sąrašų stiliai (OL + UL) */
+
+.about .skills-list,
+.about .timeline-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+/* Nenumeruotas sąrašas su pseudo-elementu */
+.about .skills-list li {
+  position: relative;
+  padding-left: 2.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.about .skills-list li::before {
+  content: "✔";
+  position: absolute;
+  left: 0.4rem;
+  top: 0.2rem;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 999px;
+  border: 2px solid var(--accent-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--accent-color);
+  background: color-mix(in srgb, var(--surface-color), #000 20%);
+}
+
+.about .skills-list li ul {
+  margin-top: 0.3rem;
+  padding-left: 1.3rem;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+
+/* Numeruotas sąrašas su skaitikliu */
+.about .timeline-list {
+  counter-reset: karjera;
+  margin-top: 0.5rem;
+}
+
+.about .timeline-list li {
+  position: relative;
+  padding-left: 3rem;
+  margin-bottom: 0.8rem;
+}
+
+.about .timeline-list li::before {
+  counter-increment: karjera;
+  content: counter(karjera);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent-color), #ff9f43);
+  color: var(--contrast-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* Papildoma 2: paslaugų lentelė */
+
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+}
+
+.services-table thead th {
+  text-align: center;
+  padding: 0.9rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  background: color-mix(in srgb, var(--surface-color), #000000 25%);
+  color: var(--contrast-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.services-table tbody td {
+  padding: 0.9rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.services-table tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--surface-color), transparent 40%);
+}
+
+.services-table tbody tr:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 90%);
+}
+/* ================================
+   LD10 – ANIMACIJOS IR PRELOADERIS
+   ================================ */
+
+/* 1. Pagrindiniai @keyframes */
+
+/* Sekcijų atsiradimas (fade-in + švelnus judesys į viršų) */
+@keyframes section-fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Social ikonų „plūduriavimas“ */
+@keyframes social-icon-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Preloaderio sukimasis */
+@keyframes preloader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Preloaderio išnykimas */
+@keyframes preloader-fade-out {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+/* Services gradientinio fono judėjimas */
+@keyframes services-gradient-move {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* About figūrų „plūduriavimas“ ir sukimasis */
+@keyframes about-shape-float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-40px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes about-shape-rotate {
+  0% {
+    transform: rotate(-8deg) translateY(0);
+  }
+  50% {
+    transform: rotate(8deg) translateY(-20px);
+  }
+  100% {
+    transform: rotate(-8deg) translateY(0);
+  }
+}
+
+/* 2. Sekcijų animacija – naudojama su .section-animate klase */
+
+.section-animate {
+  opacity: 0;
+  transform: translateY(24px);
+  animation: section-fade-in-up 0.9s ease-out forwards;
+}
+
+/* Nedideli vėlavimai skirtingoms sekcijoms */
+#hero.section-animate {
+  animation-delay: 0.1s;
+}
+
+#about.section-animate {
+  animation-delay: 0.25s;
+}
+
+#resume.section-animate {
+  animation-delay: 0.35s;
+}
+
+#services.section-animate {
+  animation-delay: 0.45s;
+}
+
+#portfolio.section-animate {
+  animation-delay: 0.55s;
+}
+
+#contact.section-animate {
+  animation-delay: 0.65s;
+}
+
+/* 3. Social ikonų animacija */
+
+/* Hero social nuorodos */
+.hero .social-links a {
+  position: relative;
+  animation: social-icon-float 2.4s ease-in-out infinite;
+}
+
+/* Šiek tiek „pasislinkę“ laikai, kad nešokinėtų visi kartu */
+.hero .social-links a:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.hero .social-links a:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.hero .social-links a:nth-child(4) {
+  animation-delay: 0.45s;
+}
+
+/* Footer social nuorodos – truputį lėčiau */
+.footer .social-links a {
+  position: relative;
+  animation: social-icon-float 3s ease-in-out infinite;
+}
+
+/* 4. Page preloaderis */
+
+#preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: radial-gradient(circle at top, color-mix(in srgb, var(--accent-color), #ffffff 20%), #040404 55%, #000000 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--contrast-color);
+  font-family: var(--heading-font);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  animation: preloader-fade-out 1.2s ease-out 1.4s forwards;
+}
+
+/* „Spinner“ apskritimas */
+.preloader-spinner {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 3px solid color-mix(in srgb, var(--accent-color), transparent 60%);
+  border-top-color: var(--accent-color);
+  animation: preloader-spin 0.8s linear infinite;
+}
+
+/* Preloaderio tekstas */
+.preloader-text {
+  opacity: 0.85;
+}
+
+/* 5. Services – animuotas gradientinis fonas (papildoma užduotis) */
+
+.services.section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.services.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    120deg,
+    #ff6f61,
+    #ffb74d,
+    #64b5f6,
+    #ab47bc
+  );
+  background-size: 220% 220%;
+  opacity: 0.28;
+  animation: services-gradient-move 16s ease-in-out infinite alternate;
+}
+
+/* Kad tekstas būtų įskaitomas ant gradiento */
+.services.section .section-title,
+.services.section .section-title h2,
+.services.section .section-title p {
+  position: relative;
+  z-index: 1;
+}
+
+/* 6. About – CSS figūros (papildoma užduotis) */
+
+.about.section {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Apvali figūra */
+.about.section::before {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffb74d, color-mix(in srgb, var(--accent-color), #000 40%));
+  opacity: 0.26;
+  right: -40px;
+  top: 20%;
+  animation: about-shape-float 11s ease-in-out infinite;
+}
+
+/* „Trikampio“ tipo figūra naudojant clip-path */
+.about.section::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  background: linear-gradient(135deg, #64b5f6, #ab47bc);
+  opacity: 0.22;
+  left: -60px;
+  bottom: 10%;
+  clip-path: polygon(0 0, 100% 30%, 30% 100%);
+  animation: about-shape-rotate 14s ease-in-out infinite;
+}
+
+/* 7. Prefers-reduced-motion – palengvinam / išjungiame animacijas */
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* Preloaderis neturi „laikyti“ puslapio */
+  #preloader {
+    animation: none !important;
+    opacity: 1;
+    visibility: hidden;
+    display: none;
+  }
+
+  /* Sekcijos turi būti matomos be judėjimo */
+  .section-animate {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Social ikonų judėjimą išjungiam */
+  .social-links a {
+    animation: none !important;
+  }
+
+  /* Gradientas ir figūros – be judėjimo */
+  .services.section::before,
+  .about.section::before,
+  .about.section::after {
+    animation: none !important;
+  }
+}
