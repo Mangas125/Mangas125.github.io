@@ -965,35 +965,140 @@
           </div>
 
           <div class="col-lg-8">
-            <form action="forms/contact.php" method="post" class="php-email-form">
+            <form id="contact-form" class="contact-form" novalidate>
               <div class="row gy-4">
 
+                <!-- Vardas -->
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+                  <label for="firstName" class="form-label">Vardas</label>
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    class="form-control"
+                    placeholder="Įveskite vardą"
+                    required
+                  >
+                  <small class="form-error" id="firstNameError"></small>
                 </div>
 
+                <!-- Pavardė -->
                 <div class="col-md-6">
-                  <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+                  <label for="lastName" class="form-label">Pavardė</label>
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    class="form-control"
+                    placeholder="Įveskite pavardę"
+                    required
+                  >
+                  <small class="form-error" id="lastNameError"></small>
                 </div>
 
+                <!-- El. paštas -->
+                <div class="col-md-6">
+                  <label for="email" class="form-label">El. paštas</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="pvz. vardas@pastas.lt"
+                    required
+                  >
+                  <small class="form-error" id="emailError"></small>
+                </div>
+
+                <!-- Telefonas -->
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Telefono numeris</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="form-control"
+                    placeholder="+370 6xx xxxxx"
+                    required
+                  >
+                  <small class="form-error" id="phoneError"></small>
+                </div>
+
+                <!-- Adresas -->
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+                  <label for="address" class="form-label">Adresas</label>
+                  <input
+                    type="text"
+                    id="address"
+                    name="address"
+                    class="form-control"
+                    placeholder="Gatvė, namo nr., miestas"
+                    required
+                  >
+                  <small class="form-error" id="addressError"></small>
                 </div>
 
-                <div class="col-md-12">
-                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+                <!-- 3 vertinimo klausimai (1–10) -->
+                <div class="col-md-4">
+                  <label for="rating1" class="form-label">Klausimas 1 (1–10)</label>
+                  <input
+                    type="number"
+                    id="rating1"
+                    name="rating1"
+                    class="form-control"
+                    min="1"
+                    max="10"
+                    required
+                  >
+                  <small class="form-error" id="rating1Error"></small>
                 </div>
 
+                <div class="col-md-4">
+                  <label for="rating2" class="form-label">Klausimas 2 (1–10)</label>
+                  <input
+                    type="number"
+                    id="rating2"
+                    name="rating2"
+                    class="form-control"
+                    min="1"
+                    max="10"
+                    required
+                  >
+                  <small class="form-error" id="rating2Error"></small>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="rating3" class="form-label">Klausimas 3 (1–10)</label>
+                  <input
+                    type="number"
+                    id="rating3" 
+                    name="rating3"
+                    class="form-control"
+                    min="1"
+                    max="10"
+                    required
+                  >
+                  <small class="form-error" id="rating3Error"></small>
+                </div>
+
+                <!-- Submit mygtukas -->
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                  <button type="submit">Send Message</button>
+                  <button
+                    id="contact-submit"
+                    type="submit"
+                    class="btn-primary"
+                    disabled
+                  >
+                    Siųsti
+                  </button>
                 </div>
 
               </div>
             </form>
+
+            <!-- Čia JS išves rezultatus -->
+            <div id="form-results" class="mt-4"></div>
+            <div id="form-average" class="mt-2 fw-bold"></div>
           </div>
 
         </div>
@@ -1070,6 +1175,16 @@
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+  
+  <!-- Success pop-up (LD11) -->
+  <div id="success-popup" class="success-popup">
+    <div class="success-popup-inner">
+      <p>Duomenys pateikti sėkmingai!</p>
+      <button type="button" id="success-popup-close" class="btn-primary btn-sm">
+        Uždaryti
+      </button>
+    </div>
+  </div>
 
    <!-- Preloader (LD10) -->
   <div id="preloader">
@@ -1090,6 +1205,8 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <!-- Custom JS File (LD11) -->
+  <script src="assets/js/custom.js"></script>
 
 </body>
 

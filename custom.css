@@ -637,3 +637,75 @@ section.portfolio {
     animation: none !important;
   }
 }
+/* ================================
+   LD11 – kontaktų formos stiliai
+   ================================ */
+
+.contact-form .form-error {
+  color: #ff6b6b;
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.contact-form .form-control.is-invalid {
+  border-color: #ff6b6b;
+  box-shadow: 0 0 0 0.1rem rgba(255, 107, 107, 0.25);
+}
+
+.contact-form .form-control:focus.is-invalid {
+  outline: none;
+}
+
+/* Submit mygtukas, kai neaktyvus */
+.btn-primary:disabled,
+.btn-primary[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Rezultatų blokas po forma */
+#form-results {
+  padding: 1.2rem 1.4rem;
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--surface-color), #000000 15%);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
+}
+
+#form-results h5 {
+  margin-bottom: 0.6rem;
+}
+
+/* Sėkmingo pateikimo pop-up */
+.success-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.75);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.success-popup.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.success-popup-inner {
+  background: color-mix(in srgb, var(--surface-color), #000000 20%);
+  border-radius: 18px;
+  padding: 1.6rem 2rem;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.85);
+  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 50%);
+  text-align: center;
+}
+
+.success-popup-inner p {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
