@@ -1107,6 +1107,59 @@
 
     </section><!-- /Contact Section -->
 
+    <!-- Game Section (LD12) -->
+    <section id="game" class="game section section-animate">
+
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Mano Žaidimas</span>
+        <h2>Mano Žaidimas</h2>
+        <p>Atminties kortelių žaidimas (Flip Card Memory).</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row gy-4">
+
+          <!-- Žaidimų lenta + valdikliai -->
+          <div class="col-lg-8">
+            <div class="game-controls mb-3">
+              <div class="difficulty">
+                <label for="game-difficulty">Sudėtingumo lygis:</label>
+                <select id="game-difficulty" class="form-select form-select-sm w-auto d-inline-block ms-2">
+                  <option value="easy">Lengvas (4×3)</option>
+                  <option value="hard">Sunkus (6×4)</option>
+                </select>
+              </div>
+
+              <div class="game-buttons mt-3">
+                <button id="game-start" type="button" class="btn-primary btn-sm me-2">Start</button>
+                <button id="game-reset" type="button" class="btn-secondary btn-sm">Atnaujinti</button>
+              </div>
+            </div>
+
+            <div id="game-board" class="game-board"></div>
+
+            <div id="game-win-message" class="game-win-message mt-3" aria-live="polite"></div>
+          </div>
+
+          <!-- Statistika -->
+          <div class="col-lg-4">
+            <div class="game-stats">
+              <h3>Statistika</h3>
+              <p>Ėjimai: <span id="game-moves">0</span></p>
+              <p>Sutapusios poros: <span id="game-matches">0</span></p>
+              <p>Laikas: <span id="game-time">00:00</span></p>
+              <hr>
+              <h4>Geriausi rezultatai</h4>
+              <p>Lengvas: <span id="best-easy">-</span></p>
+              <p>Sunkus: <span id="best-hard">-</span></p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section><!-- /Game Section -->
+
   </main>
 
   <footer id="footer" class="footer">

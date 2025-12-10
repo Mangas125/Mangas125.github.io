@@ -709,3 +709,125 @@ section.portfolio {
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
+/* ================================
+   LD12 – atminties kortelių žaidimas
+   ================================ */
+
+.game.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.game-stats {
+  border-radius: 18px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.6);
+  background: color-mix(in srgb, var(--surface-color), #000000 10%);
+  padding: 1.4rem 1.6rem;
+  font-size: 0.95rem;
+}
+
+.game-stats h3,
+.game-stats h4 {
+  margin-bottom: 0.5rem;
+}
+
+.game-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.game-controls .difficulty label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* Lenta */
+.game-board {
+  display: grid;
+  gap: 0.8rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+/* 4×3 (12 kortelių) */
+.game-board-easy {
+  grid-template-columns: repeat(4, minmax(70px, 95px));
+}
+
+/* 6×4 (24 kortelės) */
+.game-board-hard {
+  grid-template-columns: repeat(6, minmax(60px, 80px));
+}
+
+/* Kortelė */
+.memory-card {
+  position: relative;
+  width: 100%;
+  padding-top: 130%; /* išlaiko proporcijas */
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  perspective: 800px;
+}
+
+.memory-card:focus {
+  outline: 2px solid color-mix(in srgb, var(--accent-color), transparent 30%);
+}
+
+.memory-card-inner {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: transparent;
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.7);
+}
+
+.memory-card-front,
+.memory-card-back {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+
+/* Neatversta pusė */
+.memory-card-front {
+  background: radial-gradient(circle at 30% 0%, #ffe082, var(--accent-color));
+}
+
+/* Atversta pusė (emoji) */
+.memory-card-back {
+  background: color-mix(in srgb, var(--surface-color), #000000 15%);
+  transform: rotateY(180deg);
+  font-size: 2rem;
+}
+
+/* Apvertimas */
+.memory-card.flipped .memory-card-inner,
+.memory-card.matched .memory-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Sutapusios poros paryškinimas */
+.memory-card.matched .memory-card-back {
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-color), transparent 10%);
+}
+
+.game-win-message {
+  min-height: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--accent-color), #ffffff 15%);
+  margin-top: 0.5rem;
+}
